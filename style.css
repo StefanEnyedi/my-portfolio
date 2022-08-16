@@ -1,0 +1,65 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+nav {
+  background-color: hsl(227deg, 100%, 78%);
+  font-size: 2.3rem;
+  display: flex;
+}
+nav h1 {
+  display: flex;
+  align-items: center;
+  padding-left: 2.2rem;
+  flex: 1;
+}
+nav #MainLinks {
+  display: flex;
+  justify-content: flex-end;
+}
+nav #MainLinks li {
+  list-style: none;
+  padding: 2.2rem;
+}
+nav #MainLinks li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+nav #MainLinks li a:hover {
+  color: white;
+  transition: all 0.25s ease-in-out;
+}
+
+@media only screen and (max-width: 560px) {
+  nav {
+    display: block;
+    position: relative;
+  }
+  nav .HamburgerMain {
+    position: absolute;
+    border-radius: 50%;
+    background-color: red;
+    width: 5rem;
+    height: 5rem;
+    top: 1.5rem;
+    right: 3rem;
+    cursor: pointer;
+  }
+  nav #MainLinks {
+    background-color: green;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

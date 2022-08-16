@@ -1,0 +1,65 @@
+/* Reset */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+}
+$primaryColor:  hsla(227, 100%, 78%, 1);
+
+   nav{
+    background-color: $primaryColor;
+    font-size: 2.3rem;
+    display: flex;
+    // justify-content: space-between;
+        h1{
+            display: flex;
+            align-items: center;
+            padding-left: 2.2rem;
+            flex: 1;
+        }
+        #MainLinks{
+            display: flex;
+            justify-content: flex-end;
+            li{
+                list-style: none;
+                padding: 2.2rem;
+               a{
+                text-decoration: none;
+                color: black;
+                font-weight: 700;
+               }
+               a:hover{
+                color: white;
+                transition: all 0.25s ease-in-out;
+               }
+            }
+        }
+   }
+@media only screen and (max-width: 560px){
+    nav{
+        display: block;
+        position: relative;
+        .HamburgerMain{
+            position: absolute;
+            border-radius: 50%;
+            background-color: red;
+            width: 5rem;
+            height: 5rem;
+            top: 1.5rem;
+            right: 3rem;
+            cursor: pointer;
+        }
+        #MainLinks{
+            background-color: green;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            display: none;
+        }
+    }
+}

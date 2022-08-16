@@ -42,6 +42,9 @@ $primaryColor:  hsla(227, 100%, 78%, 1);
    }
 @media only screen and (max-width: 560px){
     nav{
+        .hidden{
+            display: block !important;
+        }
         display: block;
         position: relative;
         .HamburgerMain{
@@ -55,7 +58,6 @@ $primaryColor:  hsla(227, 100%, 78%, 1);
             cursor: pointer;
         }
         #MainLinks{
-            background-color: green;
             justify-content: center;
             align-items: flex-start;
             flex-direction: column;

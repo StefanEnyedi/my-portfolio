@@ -11,10 +11,15 @@
   font-size: 62.5%;
 }
 
+body {
+  font-family: "Merriweather", serif;
+}
+
 nav {
-  background-color: hsl(227deg, 100%, 78%);
+  background-color: #eaa2ff;
   font-size: 2.3rem;
   display: flex;
+  position: relative;
 }
 nav h1 {
   display: flex;
@@ -22,8 +27,31 @@ nav h1 {
   padding-left: 2.2rem;
   flex: 1;
 }
-nav #MainLinks {
+nav #DesktopLinks {
   display: flex;
+  align-items: center;
+  padding: 2.2rem;
+}
+nav #DesktopLinks li {
+  list-style: none;
+  margin-left: 1rem;
+  position: relative;
+}
+nav #DesktopLinks li a {
+  text-decoration: none;
+  color: black;
+}
+nav #DesktopLinks li:nth-child(3):after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -0.7rem;
+  width: 10%;
+  height: 100%;
+  background-color: purple;
+}
+nav #MainLinks {
+  display: none;
   justify-content: flex-end;
 }
 nav #MainLinks li {
@@ -38,6 +66,42 @@ nav #MainLinks li a {
 nav #MainLinks li a:hover {
   color: white;
   transition: all 0.25s ease-in-out;
+}
+
+nav:after {
+  position: absolute;
+  content: "";
+  background-color: red;
+  width: 0.2%;
+  height: 100%;
+  left: 119.8rem;
+  background-color: purple;
+}
+
+.FirstSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40vh;
+  background-color: #e28aff;
+}
+.FirstSection .AboutMe h1 {
+  font-size: 3rem;
+}
+.FirstSection .AboutMe p {
+  margin-top: 1rem;
+}
+.FirstSection .Skills {
+  font-size: 2.5rem;
+}
+.FirstSection .Skills ul {
+  display: flex;
+  list-style: none;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+.FirstSection .Skills ul li {
+  margin-right: 1rem;
 }
 
 @media only screen and (max-width: 560px) {
@@ -62,6 +126,9 @@ nav #MainLinks li a:hover {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    display: none;
+  }
+  nav #DesktopLinks {
     display: none;
   }
 }/*# sourceMappingURL=style.css.map */

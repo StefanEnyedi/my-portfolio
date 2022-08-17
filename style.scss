@@ -9,35 +9,110 @@
 :root{
     font-size: 62.5%;
 }
-$primaryColor:  hsla(227, 100%, 78%, 1);
-
+$PrimaryColor:  #eaa2ff;
+$ContentColor: #e28aff;
+$PrimaryFont: 'Merriweather', serif;
+    body{
+        font-family: $PrimaryFont;
+    }
    nav{
-    background-color: $primaryColor;
+    background-color: $PrimaryColor;
     font-size: 2.3rem;
     display: flex;
-    // justify-content: space-between;
+    position: relative;
+    // display: none;
+   
         h1{
             display: flex;
             align-items: center;
             padding-left: 2.2rem;
             flex: 1;
         }
-        #MainLinks{
+
+        #DesktopLinks{
             display: flex;
-            justify-content: flex-end;
+            align-items: center;
+            padding: 2.2rem;
             li{
                 list-style: none;
+                margin-left: 1rem;
+                position: relative;
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }  
+            li:nth-child(3):after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -0.7rem;
+                width: 10%;
+                height: 100%;
+                background-color: purple;
+            }
+        }
+        #MainLinks{
+            display: none;
+            // display: flex;
+            justify-content: flex-end;
+            
+            li{
+                // visibility: hidden;
+                list-style: none;
                 padding: 2.2rem;
+
                a{
                 text-decoration: none;
                 color: black;
                 font-weight: 700;
                }
+
                a:hover{
                 color: white;
                 transition: all 0.25s ease-in-out;
                }
             }
+        }
+   }
+   nav:after{
+    position: absolute;
+    content: "";
+    background-color: red;
+    width: 0.2%;
+    height: 100%;
+    left: 119.8rem;
+    background-color: purple;
+   }
+   .FirstSection{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh;
+    background-color: $ContentColor;
+
+        .AboutMe{
+            h1{
+                font-size: 3rem;
+            }
+
+            p{
+                margin-top: 1rem;
+            }
+        }
+        .Skills{
+            font-size: 2.5rem;
+            ul{
+                display: flex;
+                list-style: none;
+                font-size: 2rem;
+                margin-top: 1rem;
+
+                    li{
+                        margin-right: 1rem;
+                    }
+            }
+
         }
    }
 @media only screen and (max-width: 560px){
@@ -47,6 +122,7 @@ $primaryColor:  hsla(227, 100%, 78%, 1);
         }
         display: block;
         position: relative;
+
         .HamburgerMain{
             position: absolute;
             border-radius: 50%;
@@ -57,10 +133,14 @@ $primaryColor:  hsla(227, 100%, 78%, 1);
             right: 3rem;
             cursor: pointer;
         }
+
         #MainLinks{
             justify-content: center;
             align-items: flex-start;
             flex-direction: column;
+            display: none;
+        }
+        #DesktopLinks{
             display: none;
         }
     }

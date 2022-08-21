@@ -12,7 +12,8 @@
 }
 
 body {
-  font-family: "Merriweather", serif;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
 }
 
 nav {
@@ -68,25 +69,30 @@ nav #MainLinks li a:hover {
   transition: all 0.25s ease-in-out;
 }
 
-nav:after {
-  position: absolute;
-  content: "";
-  background-color: red;
-  width: 0.2%;
-  height: 100%;
-  left: 119.8rem;
-  background-color: purple;
-}
-
 .FirstSection {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 40vh;
   background-color: #e28aff;
+  padding: 1rem;
 }
 .FirstSection .AboutMe h1 {
-  font-size: 3rem;
+  display: inline;
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 0.6rem + 2vw, 3rem);
+  position: relative;
+  z-index: 2;
+}
+.FirstSection .AboutMe h1:after {
+  z-index: -2;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5rem;
+  background-color: orange;
 }
 .FirstSection .AboutMe p {
   margin-top: 1rem;
@@ -104,6 +110,28 @@ nav:after {
   margin-right: 1rem;
 }
 
+.SecondSection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+.SecondSection .ContentBox {
+  width: 250px;
+  height: 150px;
+  border: 1px solid red;
+}
+.SecondSection .ContentBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.SecondSection .ContentBox .SecondBox {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
 @media only screen and (max-width: 560px) {
   nav {
     display: block;
@@ -111,22 +139,27 @@ nav:after {
   }
   nav .hidden {
     display: block !important;
+    position: absolute;
+    width: 100%;
+    background-color: #eaa2ff;
+    z-index: 3;
   }
   nav .HamburgerMain {
     position: absolute;
     border-radius: 50%;
     background-color: red;
-    width: 5rem;
-    height: 5rem;
-    top: 1.5rem;
-    right: 3rem;
+    width: 4rem;
+    height: 4rem;
+    top: 0;
+    right: 0;
     cursor: pointer;
   }
   nav #MainLinks {
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
     display: none;
+  }
+  nav #MainLinks li {
+    display: flex;
+    justify-content: flex-start;
   }
   nav #DesktopLinks {
     display: none;
